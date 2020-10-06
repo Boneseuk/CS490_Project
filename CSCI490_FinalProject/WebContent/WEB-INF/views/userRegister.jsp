@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Register</title>
+<title>User Register</title>
 </head>
 <body>
  <div align="center">

@@ -27,7 +27,7 @@
 	<br>
 
 	<div class="col-md-6 offset-md-3">
-		<h3>Register Here</h3> <br>
+		<h1>User Register Form</h1> <br>
 		<form action="<%=request.getContextPath()%>/register" method="post">
 			<div class="form-group row">
 				<div class="col">

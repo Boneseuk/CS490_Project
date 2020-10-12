@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>User successfully registered.</h1>
+	<h1>Wrong credentials</h1>
+	<a href="/login">Go to Login Page</a>
+		<a href="/register">Go to Register Page</a>
 </body>
 </html>

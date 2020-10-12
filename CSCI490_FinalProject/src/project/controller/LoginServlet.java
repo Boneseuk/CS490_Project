@@ -8,34 +8,26 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import project.bean.LoginBean;
 import project.dao.UserDao;
 import project.model.User;
 
-/**
- * Servlet implementation class UserServlet
- */
-@WebServlet("/register")
-public class UserServlet extends HttpServlet {
+@WebServlet("/login")
+public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-	private UserDao userDao = new UserDao();
+	private UserDao userDao;
 	
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public UserServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	public void init() {
+		userDao = new UserDao();
+	}
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/userRegister.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/userLogin.jsp");
 		dispatcher.forward(request, response);
 	}
 
@@ -44,28 +36,35 @@ public class UserServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String firstName = request.getParameter("firstName");
-		String lastName = request.getParameter("lastName");
 		String username = request.getParameter("username");
         String password = request.getParameter("password");
-        String contact = request.getParameter("contact");
         
-        User user = new User();
-        user.setFirstName(firstName);
-        user.setLastName(lastName);
-        user.setUsername(username);
-        user.setPassword(password);
-        user.setContact(contact);
+        LoginBean loginBean = new LoginBean();
+        loginBean.setUsername(username);
+        loginBean.setPassword(password);
+        
+       System.out.println("here");
         
         try {
-			userDao.registerUser(user);
+        	//login success
+			if(userDao.validate(loginBean)) {
+				System.out.println("Successfully logged in");
+				HttpSession session = request.getSession();
+				session.setAttribute("username", username);
+				session.setAttribute("password", password);
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/home.jsp");
+				dispatcher.forward(request, response);
+			}
+			//login fail
+			else {
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/loginFail.jsp");
+				dispatcher.forward(request, response);
+			}
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-        
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/userDetails.jsp");
-		dispatcher.forward(request, response);
+      
 	}
 
 }

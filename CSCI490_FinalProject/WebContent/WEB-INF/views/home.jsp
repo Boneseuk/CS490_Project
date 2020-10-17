@@ -27,14 +27,16 @@
 	<br>
 
 	<div class="col-md-6 offset-md-3">
-		<%
-			String name = (String) session.getAttribute("username");
-		out.print("Hello! " + name);
-		%>
-		<div align="center">
-			<h1>Pick up your free food :]</h1>
+		<h1>
+			<%
+				String name = (String) session.getAttribute("username");
+			out.print("Welcome " + name + "!");
+			%>
+		</h1>
 
-		</div>
+		<p>Pick up your free food :]</p>
+
+
 
 	</div>
 

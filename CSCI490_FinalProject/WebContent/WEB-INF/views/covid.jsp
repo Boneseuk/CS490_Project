@@ -27,97 +27,99 @@
 	<br>
 
 	<div class="col-md-6 offset-md-3">
-		<h3>CovidCheck</h3> <br>
+		<h3>Covid Check</h3> <br>
 		<form action="<%=request.getContextPath()%>/covidcheck" method="post">
 			<div class="form-group row">
 				
 				<div class="row">
-				<p>Do you currently have any of the following Symptom:</p>
 				
 					<div class="form-check form-check-inline">
-			  			<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+						<p>Do you currently have any of the following Symptom: </p>
+			  			<input class="form-check-input" type="radio" name="symptom" id="inlineRadio1" value="option1">
 			  			<label class="form-check-label" for="inlineRadio1">Yes</label>
-			  			<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+			  			<input class="form-check-input" type="radio" name="symptom" id="inlineRadio2" value="option2">
 			  			<label class="form-check-label" for="inlineRadio2">No</label>
 					</div>
 				
 				</div>
 				<br>
-				<div class="row">
-				<p>Loss of Taste or Smell:</p>
 				
-					<div class="form-check form-check-inline">
-			  			<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option1">
-			  			<label class="form-check-label" for="inlineRadio3">Yes</label>
-						<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option2">
-			  			<label class="form-check-label" for="inlineRadio4">No</label>
-					</div>
-				</div>
 				<br>
 				<div class="row">
-				<p>Muscle Soreness or Headaches or Fatigue: </p>
-				
+					<p>Muscle Soreness or Headaches or Fatigue: </p>
 					<div class="form-check form-check-inline">
-			  			<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option1">
+			  			<input class="form-check-input" type="radio" name="sore" id="inlineRadio5" value="option1">
 			  			<label class="form-check-label" for="inlineRadio5">Yes</label>
 					
-			  			<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio6" value="option2">
+			  			<input class="form-check-input" type="radio" name="sore" id="inlineRadio6" value="option2">
 			  			<label class="form-check-label" for="inlineRadio6">No</label>
 					</div>
 				</div>
 				<br>
+				
 				<div class="row">
-				<p>Cough or Runny Nose or Sore Throat or Congestion: </p>
+					<p>Cough or Runny Nose or Sore Throat or Congestion: </p>
 				
 					<div class="form-check form-check-inline">
-			  			<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio7" value="option1">
+			  			<input class="form-check-input" type="radio" name="cough" id="inlineRadio7" value="option1">
 			  			<label class="form-check-label" for="inlineRadio7">Yes</label>
 					
-			  			<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio8" value="option2">
+			  			<input class="form-check-input" type="radio" name="cough" id="inlineRadio8" value="option2">
 			  			<label class="form-check-label" for="inlineRadio8">No</label>
 					</div>
 				</div>
 				
 				<div class="row">
-				<p>Difficulty Breathing or Shortness of Breath: </p>
+					<p>Difficulty Breathing or Shortness of Breath: </p>
 				
 					<div class="form-check form-check-inline">
-			  			<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio9" value="option1">
+			  			<input class="form-check-input" type="radio" name="breathing" id="inlineRadio9" value="option1">
 			  			<label class="form-check-label" for="inlineRadio9">Yes</label>
 					</div>
 					<div class="form-check form-check-inline">
-			  			<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio10" value="option2">
+			  			<input class="form-check-input" type="radio" name="breathing" id="inlineRadio10" value="option2">
 			  			<label class="form-check-label" for="inlineRadio10">No</label>
 					</div>
 				</div>
+				
 				<br>
+				
 				<div class="row">
-				<p>Inflammation of eye including redness, itching and tearing along with feeling feverish: </p>
+					<p>Inflammation of eye including redness, itching and tearing along with feeling feverish: </p>
 				
 					<div class="form-check form-check-inline">
-			  			<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio11" value="option1">
+			  			<input class="form-check-input" type="radio" name="redness" id="inlineRadio11" value="option1">
 			  			<label class="form-check-label" for="inlineRadio11">Yes</label>
 					
-			  			<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio12" value="option2">
+			  			<input class="form-check-input" type="radio" name="redness" id="inlineRadio12" value="option2">
 			  			<label class="form-check-label" for="inlineRadio12">No</label>
 					</div>
 				</div>
+				
 				<br>
+				
 				<div class="row">
-				<p>Abdominal Pain or Diarrhea or Nausea or Vomiting: </p>
+					<p>Abdominal Pain or Diarrhea or Nausea or Vomiting: </p>
 				
 					<div class="form-check form-check-inline">
-			  			<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio13" value="option1">
+			  			<input class="form-check-input" type="radio" name="nausea" id="inlineRadio13" value="option1">
 			  			<label class="form-check-label" for="inlineRadio13">Yes</label>
-					
-			  			<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio14" value="option2">
+			  			<input class="form-check-input" type="radio" name="nausea" id="inlineRadio14" value="option2">
 			  			<label class="form-check-label" for="inlineRadio14">No</label>
+					</div>
+				</div>
+				<br><br>
+				<div class="row">
+					<p>Loss of Taste or Smell: </p>
+					<div class="form-check form-check-inline">
+			  			<input class="form-check-input" type="radio" name="taste" id="inlineRadio3" value="option1">
+			  			<label class="form-check-label" for="inlineRadio3">Yes</label>
+						<input class="form-check-input" type="radio" name="taste" id="inlineRadio4" value="option2">
+			  			<label class="form-check-label" for="inlineRadio4">No</label>
 					</div>
 				</div>
 			</div>
 
-			
-			<br><br>
 
 			<button type="submit" class="btn btn-success">Submit</button>
 		</form>

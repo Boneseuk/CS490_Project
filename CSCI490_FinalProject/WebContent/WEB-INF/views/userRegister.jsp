@@ -54,6 +54,19 @@
 				<label for="exampleInputPassword1">Phone number</label> <input
 					type="text" class="form-control" name="contact">
 			</div>
+			
+			<p>Please choose your role: </p>
+			
+			<div class="form-check form-check-inline">
+			  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+			  <label class="form-check-label" for="inlineRadio1">Provider/Bakery</label>
+			</div>
+			<div class="form-check form-check-inline">
+			  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+			  <label class="form-check-label" for="inlineRadio2">Customer</label>
+			</div>
+			
+			<br><br>
 
 			<button type="submit" class="btn btn-success">Create User</button>
 		</form>
